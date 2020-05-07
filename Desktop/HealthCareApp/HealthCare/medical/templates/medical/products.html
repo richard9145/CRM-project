@@ -1,0 +1,50 @@
+{%  extends 'medical/main.html' %}
+
+{% block title %}
+Products
+{% endblock  %}
+
+{% block content %}
+
+	<br>
+	<!-- <div class="container-fluid">
+		<div class="row">				
+			{% if products %}
+			{% for ls in products %}
+			<div class="col-3">
+					<a><img class="product_img" src="{{ls.p_image.url}}"></a>
+					<h5>{{ ls.name }}</h5>
+					<p>{{ ls.category }}</p>
+					<p>N{{ ls.price }}</p>	
+			</div>
+			{% endfor %}
+			{% endif %}
+
+		</div>
+
+	</div> -->
+
+
+	<div class="row">
+		{% for ls in products %}
+		<div class="col-sm-3">
+			<img class="thumbnail" src="{{ls.p_image.url}}">
+			<div class="box-element product">
+				<h4><strong>{{ls.name}}</strong></h4>
+				<h6><strong>{{ls.category}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h6 style="display: inline-block; float: right">N{{ls.price}}</h6>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{%  extends 'medical/main.html' %}
+{% load static%}
+
+{% block title %}
+Customer Creation
+{% endblock  %}
+
+{% block content %}
+<br>
+<div class= "row">
+    <div class="col-sm-6">
+        <div class= "card card-body">
+            <form action="" method="POST">
+            {% csrf_token %}
+                {{create_cust.as_p}}          
+                <input class="btn btn-dark" type="submit" name="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
